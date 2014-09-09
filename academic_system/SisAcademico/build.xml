@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+
+
+<project name="SisAcademico" default="compilar" basedir=".">
+
+    <property name="src" value="\${basedir}/src" />
+    <property name="build" value="classes" />
+    <property name="doc" value="doc" />
+    <property name="dist" value="dist" />
+    <property name="package" value="*" />
+    <!--<property name="web.dir" value="WebContent/WEB-INF/web.xml" />
+    <property name="lib.dir" value="WebContent/WEB-INF/lib" />
+    <property name="tc.home" value="/opt/tomcat6/webapps/"/>
+    -->
+    <target name="limpar">
+	<echo message="Limpando informacoes antigas..."/>
+        <delete dir="${build}"/>
+	<delete dir="${doc}" />
+	<delete dir="${dist}" />
+    </target>
+
+   <!-- <path id="compile.classpath">
+	<fileset dir="${lib.dir}">
+		<include name="*.jar"/>
+	</fileset>
+    </path>
+   -->
+
+    <target name="compilar">
+	<echo message="Compilando o codigo..." />
+
+	<mkdir dir="${build}" />
+	<javac srcdir="${src}" destdir="${build}" includeantruntime="false" />
+		<!--<classpath refid="compile.classpath"/>-->
+    </target>
+
+    <target name="javadoc">
+	<echo message="Gerando a documentacao..."/>
+	<mkdir dir="${doc}" />
+    	<javadoc private="true" sourcepath="${src}" destdir="${doc}" packagenames="${package}" />
+    </target>
+
+    <target name="dist" depends="compilar">
+        <mkdir dir="${dist}" />
+        <echo message="Criando JAR da aplicação..." />
+        <jar jarfile="${dist}/SisAcademico.jar" basedir="${build}" manifest="MANIFEST.MF" />
+    </target>
+
+    <target name="rodar" depends="dist">
+         <java jar="dist/SisAcademico.jar" fork="true" />
+    </target>
+
+
+    
+    <!--
+    <target name="gerawar" depends="compile">
+	<echo message="Gerando war file..." />
+	<war destfile="${dist}/SisAcademito.war" webxml="${web.dir}">
+		<fileset dir="WebContent"/>
+			<lib dir="${lib.dir}"/>
+		<classes dir="${build}"/>
+	</war>
+    </target>
+
+    <target name="deploy" depends="gerawar">
+	<echo message="Implementando war no tomcat..." />
+	<copy todir="${tc.home}" preservelastmodified="true">
+	        <fileset dir="${dist}/">
+	            <include name="*.war"/>
+	        </fileset>
+	</copy>
+    </target>
+    -->
+</project>
