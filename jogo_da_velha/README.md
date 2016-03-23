@@ -1,33 +1,15 @@
-jogo_da_velha
-=============
+# jogo_da_velha
 
-O que é
--------
+Um jogo da velha simples feito na linguagem programação C (GCC) utilizando o conceito de matrizes esparsas e ponteiros.
 
-Um jogo da velha simples.
+* Ano: 2008.
+* Disciplina: Estrutura de dados.
 
-Quando
-------
 
-Março de 2010.
-
-Disciplina
-----------
-
-Estrutura de dados.
-
-Como
-----
-
-Feito na linguagem programação C. Utilizando o conceito de matrizes esparsas e ponteiros e o compilador GCC (Linux).
-
-Autor
-----
+## Autor
 
 Fernando Felix do Nascimento Junior
 
-Links
------
+[//]: # (http://codepad.org/4RUyihZg)
 
-http://codepad.org/4RUyihZg
-http://fernandojrifcg.wordpress.com/2010/03/13/jogo-da-velha-feita-na-linguagem-c/
+[//]: # (http://fernandojrifcg.wordpress.com/2010/03/13/jogo-da-velha-feita-na-linguagem-c/)
