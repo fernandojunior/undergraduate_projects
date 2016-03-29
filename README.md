@@ -14,4 +14,4 @@ The MIT License.
 
 -
 
-Copyright (c) 2014-2016 [Fernando Felix do Nascimento Junior](https://github.com/fernandojunior/).
+Copyright (c) 2008-2012 [Fernando Felix do Nascimento Junior](https://github.com/fernandojunior/).
